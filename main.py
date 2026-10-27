@@ -16,7 +16,7 @@ def main():
 
     image = Image.open(path).convert("RGB")
     detections = InferenceClient(model=MODEL, token=HF_API_KEY).object_detection(
-        image, threshold=THRESHOLD
+        path, threshold=THRESHOLD
     )
 
     draw = ImageDraw.Draw(image)
